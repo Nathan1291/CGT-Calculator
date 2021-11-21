@@ -10,14 +10,4 @@ def sort_records():
     recordsDataframe = pullRecords.get_records_from_csv()
     buyRecordsDataframe, sellRecordsDataframe = clean_records_into_buy_and_sell_transactions(recordsDataframe)
     return buyRecordsDataframe, sellRecordsDataframe
-
-
-
-def main():
-    buyRecordsDataframe, sellRecordsDataframe = sort_records()
-    print(buyRecordsDataframe)
-    print(sellRecordsDataframe)
-
-
-if __name__ == "__main__":
-    main()
+    

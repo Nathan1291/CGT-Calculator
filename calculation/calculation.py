@@ -1,10 +1,10 @@
 import pandas
 from calculation.sort_record.sortRecords import sort_records
+from calculation.sort_record.sortAllSellRecordsIntoCurrentFinancialYearSellRecords import take_current_financial_year_from_sellRecordsDataframe
 
-def calculate():
+
+
+def calculate(year):
     buyRecordsDataframe, sellRecordsDataframe = sort_records()
-    return buyRecordsDataframe, sellRecordsDataframe
-
-
-if __name__ == "__main__":
-    main()
+    soldInCurrentFinancialYearRecordsDataframe = take_current_financial_year_from_sellRecordsDataframe(year, sellRecordsDataframe)
+    return soldInCurrentFinancialYearRecordsDataframe
