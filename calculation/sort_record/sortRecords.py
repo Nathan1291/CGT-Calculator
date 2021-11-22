@@ -10,4 +10,3 @@ def sort_records():
     recordsDataframe = pullRecords.get_records_from_csv()
     buyRecordsDataframe, sellRecordsDataframe = clean_records_into_buy_and_sell_transactions(recordsDataframe)
     return buyRecordsDataframe, sellRecordsDataframe
-    
