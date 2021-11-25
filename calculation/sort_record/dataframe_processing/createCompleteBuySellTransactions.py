@@ -13,8 +13,8 @@ def clean_records_into_buy_and_sell_transactions(recordsDataframe):
      buyRecordsDataframe, sellRecordsDataframe = create_empty_buy_and_sell_dataframes()
 
      for i in range(len(recordsDataframe)):
-         # Check to reduce time complexity, skips processing if "Direct Transfer" is the first part of "Details"
-         if recordsDataframe.iloc[i]["Details"][0] != "D":
+         # Check to reduce time complexity, only runs if it is a buy or sell transaction
+         if recordsDataframe.iloc[i]["Details"][0] != "B" and recordsDataframe.iloc[i]["Details"][1] == " " or recordsDataframe.iloc[i]["Details"][0] != "S " and recordsDataframe.iloc[i]["Details"][1] == " ":
 
              transactionType, recordsDataframeInformation = get_records_dataframe_information(recordsDataframe.iloc[i])
 
