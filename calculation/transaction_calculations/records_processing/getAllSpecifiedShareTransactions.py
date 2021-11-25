@@ -11,6 +11,7 @@ def get_share_transaction_from_buy_records(shareName, buyRecordsDataframe):
         if buyRecordsDataframe.iloc[i]["Share"] == shareName:
             buyShareTransactions = buyShareTransactions.append(buyRecordsDataframe.iloc[i])
 
+    buyShareTransactions = buyShareTransactions.reset_index(drop=True)
     return buyShareTransactions
 
 
@@ -22,5 +23,7 @@ def get_share_transaction_from_sell_records(shareName, sellRecordsDataframe):
     for i in range(len(sellRecordsDataframe)):
         if sellRecordsDataframe.iloc[i]["Share"] == shareName:
             sellShareTransactions = sellShareTransactions.append(sellRecordsDataframe.iloc[i])
+
+    sellShareTransactions = sellShareTransactions.reset_index(drop=True)
 
     return sellShareTransactions
